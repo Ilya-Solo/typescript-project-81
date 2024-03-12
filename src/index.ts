@@ -1,4 +1,4 @@
-type TagProperties = {
+type StringEntriesHash = {
   [value: string]: string,
 };
 
@@ -7,7 +7,7 @@ class Tag {
 
   constructor(
     protected name: string,
-    protected properties?: TagProperties,
+    protected properties?: StringEntriesHash,
     protected tagText?: string,
   ) {}
 
@@ -24,4 +24,10 @@ class Tag {
 
     return Object.entries(this.properties).reduce((acc, [key, value]) => `${key}="${value}" ${acc}`, '');
   }
+}
+
+export default class HexletCode {
+    static formFor = (template: StringEntriesHash, params: StringEntriesHash, fn: (val: HexletCode) => void) => {
+        
+    }
 }
